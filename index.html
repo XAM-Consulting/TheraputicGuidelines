@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="Artificial Intelligence User Experience Design Patterns" content="">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="author" content="Luke Bennis">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+
+  
+
+  <title>TG Typography Exploration</title>
+ 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+@font-face{
+  font-family: "FranklinGothicITCbyBT";
+  src: url("FranklinGothicITCbyBT-Book.otf") format("opentype");
+}
+
+
+:root
+{
+    --body-text: 14px;
+    --body-color: #414042;
+    --heading-color: #414042;
+    --link-color: #000000;
+}
+
+body.size-lrg 
+{
+  --body-text: 18px;
+}
+
+body.size-xlrg 
+{
+  --body-text: 18px;
+}
+
+
+body.size-xlrg p
+{
+  font-size: calc(var(--body-text) * 1.15) !important;
+}
+
+*
+{
+  transition: 0.4s ease;
+}
+
+  body
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 860px;
+    padding: 30px;
+    margin-inline: auto;
+    font-size: var(--body-text);
+    margin-bottom: 20vh;
+  }
+
+  /* Menu's -------------------------------- */
+
+  .header-wrapper
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    gap: 32px;
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .header-wrapper
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .controls button
+  {
+    width: 100%;
+    font-size: 12px !important;
+  }
+    
+  }
+
+  .controls
+  {
+    overflow: hidden;
+    border-radius: 9999px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+.tab-wrapper button,
+.size-wrapper button,
+.style-wrapper button
+{
+  border: none;
+  background: #ecf0f3;
+  color: rgb(8, 33, 49);
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab-wrapper button.active,
+.size-wrapper button.active,
+.style-wrapper button.active
+{
+  background: rgb(0, 117, 219);
+  color: white;
+}
+
+#content-website,
+#content-guide
+{
+  display: none;
+}
+
+#content-website.show
+{
+  display: block;
+}
+
+#content-guide.show
+{
+  display: block;
+}
+
+.content-wrapper
+{
+  text-align: left;
+}
+
+
+  /* Exiting Style -------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5
+{
+  color: var(--heading-color);
+  font-family: "FranklinGothicITCbyBT", Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 400;
+}
+
+      h1
+      {
+        font-size: calc(var(--body-text) * 2.75);
+      }
+
+      h2
+      {
+        font-size: calc(var(--body-text) * 2.3);
+      }
+
+      h3
+      {
+        font-size: calc(var(--body-text) * 2.0);
+      }
+
+      h4
+      {
+        font-size: calc(var(--body-text) * 1.71);
+      }
+
+      h5
+      {
+        font-size: calc(var(--body-text) * 1.42);
+      }
+
+
+      .style-1 #content-guide h1,
+      .style-2 #content-guide h1,
+      .style-3 #content-guide h1,
+      .style-4 #content-guide h1
+      {
+        font-size: calc(var(--body-text) * 2.25);
+      }
+
+      .style-1 #content-guide h2,
+      .style-2 #content-guide h2,
+      .style-3 #content-guide h2,
+      .style-4 #content-guide h2
+      {
+        font-size: calc(var(--body-text) * 2.0);
+      }
+
+      .style-1 #content-guide h3,
+      .style-2 #content-guide h3,
+      .style-3 #content-guide h3,
+      .style-4 #content-guide h3
+      {
+        font-size: calc(var(--body-text) * 1.75);
+      }
+
+      .style-1 #content-guide h4,
+      .style-2 #content-guide h4,
+      .style-3 #content-guide h4,
+      .style-4 #content-guide h4
+      {
+        font-size: calc(var(--body-text) * 1.5);
+      }
+
+      .style-1 #content-guide h5,
+      .style-2 #content-guide h5,
+      .style-3 #content-guide h5,
+      .style-4 #content-guide h5
+      {
+        font-size: calc(var(--body-text) * 1.3);
+      }
+
+
+p, li, ul
+{
+
+  color: var(--body-color);
+  font-family: "FranklinGothicITCbyBT", Helvetica, sans-serif;
+  font-size: var(--body-text);
+  font-style: normal;
+  font-variant-caps: normal;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+p strong
+{
+  font-weight: bold;
+}
+
+a
+{
+  color: var(--link-color);
+}
+
+
+.style-1,
+.style-2,
+.style-3,
+.style-4
+{
+    --body-text: 16px;
+    --body-color: #0f3346;
+    --heading-color: #28395e;
+    --link-color: #004fa8;
+}
+
+
+/* Style 1 - Montserrat Only -------------------------------- */
+
+
+
+.style-1 h1,
+.style-1 h2,
+.style-1 h3,
+.style-1 h4,
+.style-1 h5
+{
+  margin-block-start: 0px;
+  margin-block-end: 1.6ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.style-1 p,
+.style-1 ul,
+.style-1 li
+{
+  margin-block-start: 0px;
+  margin-block-end: 2.0ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+
+/* Style 2 - Pairing Manrope -------------------------------- */
+
+.style-2 h1,
+.style-2 h2,
+.style-2 h3,
+.style-2 h4,
+.style-2 h5
+{
+  margin-block-start: 0px;
+  margin-block-end: 1.6ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.style-2 p,
+.style-2 ul,
+.style-2 li
+{
+  margin-block-start: 0px;
+  margin-block-end: 2.0ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* Style 3 - Pairing Barlow -------------------------------- */
+
+
+body .style-3
+{
+    --body-text: 16.25px;
+}
+
+.style-3 h1,
+.style-3 h2,
+.style-3 h3,
+.style-3 h4,
+.style-3 h5
+{
+  margin-block-start: 0px;
+  margin-block-end: 1.6ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.style-3 p,
+.style-3 ul,
+.style-3 li
+{
+  margin-block-start: 0px;
+  margin-block-end: 2.0ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+/* Style 4 - Pairing Mukta -------------------------------- */
+
+.style-4 h1,
+.style-4 h2,
+.style-4 h3,
+.style-4 h4,
+.style-4 h5
+{
+  margin-block-start: 0px;
+  margin-block-end: 1.6ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.style-4 p,
+.style-4 ul,
+.style-4 li
+{
+  margin-block-start: 0px;
+  margin-block-end: 2.0ch;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+
+
+</style>
+
+</head>
+  
+<body>
+
+<div style="width: 100%;">
+  <h1 style="font-family: Arial, Helvetica, sans-serif;">TG Typography</h1>
+  <p style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6;">These typography examples show the existing TG typography plus some on brand options to consider.
+  <br>
+  This interactive prototype shows snippets of website content & guide content for a realistic comparison. We have purposefully not indicated the fonts used to focus the review on the content legibility. Note that the heading font is always Montserrat to keep all options brand aligned.
+</p>
+<details style="font-family: Arial, Helvetica, sans-serif; margin-bottom: 20px; cursor: pointer;">
+<summary>How to use this mockup & it's options</summary>
+<p>Please use the conent toggle to swithc between the wbesite and guide content examples.
+  <br><br>
+  Then switch between the styles to find what you think is the most legible.
+  <br><br>
+  The size control then works on each style to see how providing a text size control to users could function and effect their experience.
+</p>
+</details>
+</div>
+
+<div class="header-wrapper">
+
+
+  <div class="tab-wrapper controls">
+    <button id="tab-web" class="active">Website Content</button>
+    <button id="tab-guide">Guide Content</button>
+  </div>
+
+  <div class="size-wrapper controls">
+    <button id="size-reg" class="active">Reg</button>
+    <button id="size-lrg">Lrg</button>
+    <button id="size-xlrg">Xlrg</button>
+  </div>
+
+  <div class="style-wrapper controls">
+    <button id="style-ex" class="active">Existing</button>
+    <button id="style-1">Style 1</button>
+    <button id="style-2">Style 2</button>
+    <button id="style-3">Style 3</button>
+    <button id="style-4">Style 4</button>
+
+  </div>
+
+
+</div>
+
+
+
+<div class="content-wrapper style-existing">
+
+  <div id="content-website" class="show">
+
+  <h1>Heading Example Size 1</h1>
+
+  <h2>Heading Example Size 2</h2>
+
+  <h3>Heading Example Size 3</h3>
+
+  <h4>Heading Example Size 3</h4>
+
+  <p>Example body copy content with <strong>bold weight styles</strong> as well as <em>italic style text.</em></p>
+
+  <p>An example <a href="#">text link style looks like this.</a></p>
+
+  <p><br><hr><br></p>
+
+
+
+ <h4 class="section-heading">Independent, reliable, respected</h4>
+      <p id="ihqzz1" style="white-space-collapse: inherit; text-wrap: inherit; word-break: unset;"><em aria-label="Therapeutic Guidelines&nbsp;">Therapeutic Guidelines&nbsp;</em>is a leading source of independent, evidence-based, practical treatment advice to assist practitioners with decision making at the point-of-care.</p>
+      <p id="ihn35m" style="white-space-collapse: inherit; text-wrap: inherit; word-break: unset;"><em aria-label="Therapeutic Guidelines">Therapeutic Guidelines</em>&nbsp;are regularly updated, based on the latest international literature, interpreted by Australia’s most respected experts, with input from an extensive network of general practitioners, pharmacists and other users.</p>
+      <p id="ire0us" style="white-space-collapse: inherit; text-wrap: inherit; word-break: unset;"><strong id="ibt4mb" style="font-weight: bold;">May 2023 updates:</strong></p>
+      <ul>
+        <li>Addiction guidelines</li>
+        <li id="i2dxiu">Cardiovascular guidelines</li>
+        <li>Liver Disorders, selected topics</li>
+      </ul>
+      <p id="i9t6al" style="white-space-collapse: inherit; text-wrap: inherit; word-break: unset;">
+        For a summary of other practice-changing updates in the May 2023 release, see&nbsp;<a id="iicf8c" draggable="true" href="/content-updates/" style="white-space-collapse: inherit; text-wrap: inherit; word-break: unset; color: rgb(0, 0, 0); text-decoration-line: underline; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">Updates</a>.<br><br>
+        Independence is an essential feature of&nbsp;<em aria-label="Therapeutic Guidelines">Therapeutic Guidelines</em>. Funded only by subscribers, meaning no grants, advertising, shareholders or sponsors. To protect and maintain independence, a strict conflict of interest policy is in place.
+      </p>
+
+    <h3 class="searchContentH">May 2023 Update</h3>
+    <h4>Other practice-changing updates:</h4>
+    <p><strong>Antibiotic prescribing in primary care: summary table</strong></p>
+    <ul><li>The freely available<span>&nbsp;</span><a aria-label=" (opens in a new tab)" href="https://ccmsfiles.tg.org.au/s3/PDFs/GPSummary_v15.pdf" rel="noreferrer noopener" target="_blank">Antibiotic prescribing in primary care summary table</a><span>&nbsp;</span>has been updated to include temporary advice on alternative recommendations to first-line antibiotics for use in shortage situations. The listed alternatives should only be considered if first-line treatment is unavailable as the alternatives may be<span>&nbsp;</span><strong>less efficacious</strong>, have a<span>&nbsp;</span><strong>suboptimal spectrum of activity</strong><span>&nbsp;</span>and have a<span>&nbsp;</span><strong>less favourable harm–benefit profile</strong>.</li><li>Shortage of oral liquid formulations of some antibiotics is particularly an issue. To enable the preferred antibiotic to be used in children when an oral liquid formulation is not available, the summary table also includes temporary advice developed by The Society of Hospital Pharmacists of Australia, from<span>&nbsp;</span><a href="https://www.shpa.org.au/publications-resources/drtc" rel="noreferrer noopener" target="_blank"><em>Don’t Rush To Crush</em></a>, on the suitability of crushing or dispersing oral solid-dose formulations.&nbsp;</li><li>For more information about the development of the table, see the<span>&nbsp;</span><a href="/news/support-for-primary-care-providers-regarding-antibiotic-medicine-shortages/" rel="noreferrer noopener" target="_blank">news article</a>.</li></ul>
+    <p><strong>Antibiotic guidelines</strong>&nbsp;</p>
+    <ul><li>The pneumonia topics have been updated to indicate that pneumonia can be a feature of coronavirus disease (COVID-19), and to provide links to the COVID-19 topic for resources on diagnosis and management.&nbsp;</li></ul>
+    <p><strong>Diabetes guidelines</strong>&nbsp;</p>
+    <ul><li>Following the discontinuation of the modified-release formulation of exenatide in Australia in 2021, the immediate-release formulation was discontinued in December 2022; there are now no formulations of exenatide available in Australia, so use of alternative glucagon-like peptide-1 (GLP-1) receptor agonists (dulaglutide, liraglutide, semaglutide) should be considered for type 2 diabetes in adults.&nbsp;</li></ul>
+</div>
+
+  <div id="content-guide">
+
+    <h1>Heading Example Size 1</h1>
+
+    <h2>Heading Example Size 2</h2>
+  
+    <h3>Heading Example Size 3</h3>
+  
+    <h4>Heading Example Size 3</h4>
+  
+    <p>Example body copy content with <strong>bold weight styles</strong> as well as <em>italic style text.</em></p>
+
+    <p>An example <a href="#">text link style looks like this.</a></p>
+  
+    <p><br><hr><br></p>
+  
+
+
+    <h2><strong>Aetiology of bite and clenched-fist injury infections</strong></h2>
+
+    <p outputclass="tgl_p" id="abg16-c179-para1" class="- topic/p ">Bites, including clenched-fist injuries (in which the hand is lacerated by contact with another person's teeth), often become infected. The bacteria associated with <b class="+ topic/ph hi-d/b ">human bites</b> (including <b class="+ topic/ph hi-d/b ">clenched-fist injuries</b>) are <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Staphylococcus aureus</i>, <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Eikenella corrodens</i>, <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Streptococcus</i> species and beta-lactamase–producing anaerobic bacteria. The bacteria associated with <b class="+ topic/ph hi-d/b ">animal bites</b> are <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Pasteurella</i> species, <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">S. aureus</i>, <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Capnocytophaga canimorsus</i>, <i outputclass="tgl_em" class="+ topic/ph hi-d/i ">Streptococcus</i> species and anaerobic bacteria. Cat bites have a higher incidence of deep infection than dog bites.</p>
+
+    <p outputclass="tgl_p" id="abg16-c179-para2" class="- topic/p ">A different spectrum of bacteria is associated with marine animal bites—see <xref outputclass="tgl_a" id="MPS_0.6607598808695647" href="c_abg16-c181-s1.dita" class="- topic/xref active">Aetiology of water-immersed wound infections</xref>.</p>
+    
+<h2><strong>Principles of management of bites and clenched-fist injuries</strong></h2>
+
+      <p id="abg16-c179-para3" outputclass="tgl_p" class="- topic/p ">The recommended management of bites and clenched-fist injuries is thorough cleaning, irrigation, debridement, elevation and immobilisation.</p><p id="abg16-c179-para4" outputclass="tgl_p" class="- topic/p ">Carefully examine bite wounds and clenched-fist injuries to identify deeper injuries, devitalised tissue and retained foreign bodies, particularly for bites inflicted by animals with small teeth.</p><p id="abg16-c179-para5" outputclass="tgl_p" class="- topic/p ">Postexposure rabies or lyssavirus prophylaxis is required for some bites, for example bat bites (see the <xref format="html" href="https://immunisationhandbook.health.gov.au" id="ce_inter-ref_new1" outputclass="tgl_a" scope="external" class="- topic/xref active">
+      Australian Immunisation Handbook
+   </xref> for further information). For human bite injuries with associated blood exposure, consider the need for <xref id="MPS_0.31866252294992514" outputclass="tgl_a" href="../c_postexposure_prophylaxis_against_bloodborne_viruses.dita" class="- topic/xref active">postexposure prophylaxis against bloodborne viruses</xref>&nbsp;(eg hepatitis B, HIV).</p><p id="abg16-c179-para6" outputclass="tgl_p" class="- topic/p ">For patients with bite or clenched-fist injuries, ensure that tetanus immunisation is up-to-date (see <xref id="MPS_0.931326903470791" outputclass="tgl_a" href="c_abg16-c180-s1.dita#abg16-c180-s1/abg16-c180-tbl1" class="- topic/xref active">Table 2.64</xref>).</p><p id="abg16-c179-para7" outputclass="tgl_p" class="- topic/p ">Antibiotic therapy is required for <b class="+ topic/ph hi-d/b ">infected</b> bites and clenched-fist injuries (see <xref id="MPS_0.35964312458270076" outputclass="tgl_a" href="c_abg16-c179-s4.dita" class="- topic/xref active">Localised infection</xref>&nbsp;or <xref id="MPS_0.526701336051022" outputclass="tgl_a" href="c_abg16-c179-s5.dita" class="- topic/xref active">Infection associated with systemic symptoms or deeper tissues</xref>). Before starting antibiotic therapy, collect infected tissue for Gram stain and aerobic and anaerobic culture; specify that the sample is from a bite or clenched-fist wound on the laboratory request.</p><p id="abg16-c179-para8" outputclass="tgl_p" class="- topic/p ">For bites and clenched-fist injuries that are <b class="+ topic/ph hi-d/b ">not infected</b>, antibiotic therapy is usually not necessary for otherwise healthy individuals if the risk of wound infection is low (eg small wounds not involving deeper tissues that present within 8 hours and can be adequately debrided and irrigated). Give presumptive therapy if the risk of wound infection is high, including if:</p><ul class="- topic/ul "><li class="- topic/li ">presentation to medical care is delayed by 8 hours or more</li><li class="- topic/li ">the wound is a puncture wound that cannot be debrided adequately</li><li class="- topic/li ">the wound is on the hands, feet or face</li><li class="- topic/li ">the wound involves deeper tissues (eg bones, joints, tendons)</li><li class="- topic/li ">the wound involves an open fracture—see <xref id="MPS_0.10808811672344487" outputclass="tgl_a" href="../c_open_fractures.dita" class="- topic/xref active">Open fractures</xref>&nbsp;for management</li><li class="- topic/li ">the patient is immunocompromised (eg due to asplenia or immunosuppressive medications), or has alcoholic liver disease or diabetes</li><li class="- topic/li ">the wound is a cat bite.</li></ul><p id="abg16-c179-para16" outputclass="tgl_p" class="- topic/p ">For wounds on the hands, feet or face, or if infection progresses despite antibiotic therapy, consider surgical consultation. Surgical advice may also be sought on the appropriateness of primary versus delayed wound closure.</p></conbody></concept>
+    
+
+
+  </div>
+  
+</div>
+
+
+<script>
+  feather.replace()
+</script>
+
+<script>
+
+$(document).ready(function (){
+
+      $(".tab-wrapper button").click(function(){
+      $(".tab-wrapper button").removeClass("active");
+      $(this).addClass("active");
+      });
+
+      $(".size-wrapper button").click(function(){
+      $(".size-wrapper button").removeClass("active");
+      $(this).addClass("active");
+      });
+
+      $(".style-wrapper button").click(function(){
+      $(".style-wrapper button").removeClass("active");
+      $(this).addClass("active");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#tab-web").click(function(){
+      $("#content-guide").removeClass("show");
+      $("#content-website").addClass("show");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#tab-guide").click(function(){
+      $("#content-website").removeClass("show");
+      $("#content-guide").addClass("show");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#style-ex").click(function(){
+      $("body").removeClass("style-1 style-2");
+      });
+    });
+
+    
+    $(document).ready(function (){
+      $("#style-1").click(function(){
+      $("body").removeClass("style-2 style-3 style-4");
+      $("body").addClass("style-1");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#style-2").click(function(){
+      $("body").removeClass("style-1 style-3 style-4");
+      $("body").addClass("style-2");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#style-3").click(function(){
+      $("body").removeClass("style-1 style-2 style-4");
+      $("body").addClass("style-3");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#style-4").click(function(){
+      $("body").removeClass("style-1 style-2 style-3");
+      $("body").addClass("style-4");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#size-reg").click(function(){
+      $("body").removeClass("size-lrg size-xlrg");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#size-lrg").click(function(){
+      $("body").removeClass("size-xlrg");
+      $("body").addClass("size-lrg");
+      });
+    });
+
+    $(document).ready(function (){
+      $("#size-xlrg").click(function(){
+      $("body").removeClass("size-lrg");
+      $("body").addClass("size-xlrg");
+      });
+    });
+
+
+
+    
+
+</script>
+
+</body>
+
+</html>
+
+
+
